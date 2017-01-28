@@ -1,0 +1,10 @@
+:local(.app){}
+
+html, body, #furgi-app, :local(.app) {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0
+}

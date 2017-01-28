@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "transform-runtime",
+    "inferno",
+    "transform-object-rest-spread",
+    "babel-plugin-syntax-jsx",
+    "babel-plugin-inferno"
+  ],
+  "presets": ["es2015", "stage-0"]
+}
