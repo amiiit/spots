@@ -18,15 +18,15 @@ export const mapStateChange = (newMapState) => {
   }
 }
 
-export const requestPlaces = () => {
+export const requestSpots = () => {
   return {
-    type: 'REQUEST_PLACES',
+    type: 'REQUEST_SPOTS',
   }
 }
 
-export const receivePlaces = places => {
+export const receiveSpots = places => {
   return {
-    type: 'RECEIVE_PLACES',
+    type: 'RECEIVE_SPOTS',
     spots: places,
     receivedAt: Date.now()
   }
@@ -47,14 +47,14 @@ const normalizedSpanishData = (json) => {
   })
 }
 
-export const fetchPlaces = () => {
+export const fetchSpots = () => {
   return dispatch => {
-    dispatch(requestPlaces())
+    dispatch(requestSpots())
     const url = STATIC_DATA ? require('file-loader!assets/static_data.json') : 'http://localhost:3001/spots'
     fetch(url)
       .then(response => response.json())
       .then(json => normalizedSpanishData(json))
-      .then(data => dispatch(receivePlaces(data)))
+      .then(data => dispatch(receiveSpots(data)))
   }
 }
 

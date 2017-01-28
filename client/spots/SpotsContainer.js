@@ -15,9 +15,9 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-const PlacesContainer = connect(
+const SpotsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Spots)
 
-export default PlacesContainer
+export default SpotsContainer

@@ -8,7 +8,7 @@ import createLogger from 'redux-logger'
 import css from './index.scss'
 import {createStore, applyMiddleware} from 'redux'
 import rootReducers from './reducers'
-import {fetchPlaces, retrieveMapState} from './actions'
+import {fetchSpots, retrieveMapState} from './actions'
 import {combineReducers} from 'redux'
 
 const loggerMiddleware = createLogger()
@@ -17,12 +17,12 @@ let store = createStore(
   rootReducers,
   applyMiddleware(
     thunkMiddleware,
-    // loggerMiddleware
+    loggerMiddleware
   )
 )
 
 store.dispatch(retrieveMapState())
-store.dispatch(fetchPlaces())
+store.dispatch(fetchSpots())
 
 
 render((

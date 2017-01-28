@@ -8,27 +8,27 @@ import {get} from 'lodash'
 export default class PigeonMap extends Component {
   constructor (props) {
     super(props);
+    this.state = {}
   }
 
   handleBoundsChange = bounds => {
-    this.setState({
-      bounds
-    })
+    this.props.onMapStateChange(bounds)
   }
 
   render () {
     const dims = this.props.dimensions
+
     return (
 
-      <Map center={[37.887381, -4.776933]}
-           zoom={get(this.state, 'bounds.zoom', 7)}
+      <Map center={get(this.props, 'mapState.center', [37.887381, -4.776933])}
+           zoom={get(this.props, 'mapState.zoom', 7)}
            width={dims.width}
            height={dims.height}
            onBoundsChanged={this.handleBoundsChange}
            attribution="Data from furgovw.org is under Creative Commons 3">
         <Cluster>
           {
-            this.props.spots.map(place => <Marker anchor={[place.lat, place.lng]} payload={1}/>)
+            this.props.spots.map(spots => <Marker anchor={[spots.lat, spots.lng]} payload={1}/>)
           }
         </Cluster>
       </Map>

@@ -3,14 +3,14 @@ import storageReducers from 'storage/reducers'
 
 const spots = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_PLACE':
+    case 'ADD_SPOT':
       return [
         ...state,
         {
           cTime: action.cTime
         }
       ]
-    case 'RECEIVE_PLACES':
+    case 'RECEIVE_SPOTS':
       return action.spots
     default:
       return state
