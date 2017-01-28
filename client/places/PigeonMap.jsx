@@ -13,7 +13,7 @@ export default class PigeonMap extends Component {
     const dims = this.props.dimensions
     return (
 
-      <Map center={[37.887381, -4.776933]} zoom={7} width={dims.width} height={dims.height}>
+      <Map center={[37.887381, -4.776933]} zoom={7} width={dims.width} height={dims.height} attribution="Data from furgovw.org is under Creative Commons 3">
         <Cluster>
           {
             this.props.places.map(place => <Marker anchor={[place.lat, place.lng]} payload={1}/>)
