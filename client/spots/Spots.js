@@ -2,9 +2,9 @@ import Inferno, {PropTypes as T} from 'inferno';
 import Component from 'inferno-component';
 import PigeonMap from './PigeonMap'
 
-import css from './places.scss'
+import css from './spots.scss'
 
-class Places extends Component {
+class Spots extends Component {
 
   constructor (props) {
     super(props);
@@ -43,4 +43,4 @@ class Places extends Component {
 
 }
 
-export default Places
+export default Spots

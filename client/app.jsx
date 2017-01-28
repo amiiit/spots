@@ -2,7 +2,7 @@ import 'styles/main.scss';
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 
-import PlacesContainer from 'places/PlacesContainer';
+import SpotsContainer from 'spots/SpotsContainer';
 import swURL from 'file?name=/sw.js!babel-loader!./sw';
 import css from './app.scss';
 
@@ -26,7 +26,7 @@ class App extends Component {
   render () {
     return (
       <div className={css.root}>
-        <PlacesContainer style={{height: '100%', width: '100%'}}/>
+        <SpotsContainer style={{height: '100%', width: '100%'}}/>
       </div>);
   }
 }

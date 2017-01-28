@@ -1,10 +1,10 @@
 import {connect} from 'inferno-redux'
 import {mapStateChange} from '../actions'
-import Places from './Places'
+import Spots from './Spots'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    places: state.places,
+    spots: state.spots,
     mapState: state.mapState
   }
 }
@@ -18,6 +18,6 @@ const mapDispatchToProps = dispatch => ({
 const PlacesContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Places)
+)(Spots)
 
 export default PlacesContainer

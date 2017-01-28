@@ -27,7 +27,7 @@ export const requestPlaces = () => {
 export const receivePlaces = places => {
   return {
     type: 'RECEIVE_PLACES',
-    places: places,
+    spots: places,
     receivedAt: Date.now()
   }
 }
@@ -50,7 +50,7 @@ const normalizedSpanishData = (json) => {
 export const fetchPlaces = () => {
   return dispatch => {
     dispatch(requestPlaces())
-    const url = STATIC_DATA ? require('file-loader!assets/static_data.json') : 'http://localhost:3001/places'
+    const url = STATIC_DATA ? require('file-loader!assets/static_data.json') : 'http://localhost:3001/spots'
     fetch(url)
       .then(response => response.json())
       .then(json => normalizedSpanishData(json))

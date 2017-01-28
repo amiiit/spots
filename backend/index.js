@@ -4,7 +4,7 @@ const backend = function (options) {
   console.assert(options.port);
   const app = express();
 
-  app.get('/places', function (req, res) {
+  app.get('/spots', function (req, res) {
     res.append('Access-Control-Allow-Origin', '*')
     res.json({data: options.data});
   });

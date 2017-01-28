@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 import storageReducers from 'storage/reducers'
 
-const places = (state = [], action) => {
+const spots = (state = [], action) => {
   switch (action.type) {
     case 'ADD_PLACE':
       return [
@@ -11,7 +11,7 @@ const places = (state = [], action) => {
         }
       ]
     case 'RECEIVE_PLACES':
-      return action.places
+      return action.spots
     default:
       return state
   }
@@ -28,7 +28,7 @@ const mapState = (state = {}, action) => {
 }
 
 const placesApp = combineReducers({
-  places: places,
+  spots: spots,
   mapState: mapState,
   storage: storageReducers
 })
