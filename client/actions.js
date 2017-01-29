@@ -24,6 +24,12 @@ export const requestSpots = () => {
   }
 }
 
+export const spotSelectedOnMap = id => {
+  return {
+    type: 'SPOT_SELECTED_ON_MAP',
+    spotId: id
+  }
+}
 export const receiveSpots = places => {
   return {
     type: 'RECEIVE_SPOTS',

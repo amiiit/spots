@@ -11,7 +11,7 @@ self.addEventListener("install", event => {
             .then(assets =>
               cache.addAll([
                 "/",
-                assets['main.js'],
+                // assets['main.js'],
                 assets['static_data.json']
               ])
             ).then(a => {

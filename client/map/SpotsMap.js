@@ -4,7 +4,7 @@ import PigeonMap from './PigeonMap'
 
 import css from './spots.scss'
 
-class Spots extends Component {
+class SpotsMap extends Component {
 
   constructor (props) {
     super(props);
@@ -43,4 +43,4 @@ class Spots extends Component {
 
 }
 
-export default Spots
+export default SpotsMap

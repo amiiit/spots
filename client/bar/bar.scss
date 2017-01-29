@@ -1,0 +1,16 @@
+:local(.bar) {
+
+}
+
+:local(.open){}
+
+:local(.bar) {
+  background: rebeccapurple;
+  :local(.bottom) {
+    width: 100%;
+    height: 32px;
+    :local(.open){
+      height: 54px;
+    }
+  }
+}

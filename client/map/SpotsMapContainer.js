@@ -1,6 +1,6 @@
 import {connect} from 'inferno-redux'
-import {mapStateChange} from '../actions'
-import Spots from './Spots'
+import {mapStateChange, spotSelectedOnMap} from '../actions'
+import SpotsMap from './SpotsMap'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,12 +12,15 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   onMapStateChange: (mapState) => {
     dispatch(mapStateChange(mapState))
+  },
+  onSpotSelected: spotId => {
+    dispatch(spotSelectedOnMap(spotId))
   }
 })
 
-const SpotsContainer = connect(
+const SpotsMapContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Spots)
+)(SpotsMap)
 
-export default SpotsContainer
+export default SpotsMapContainer
