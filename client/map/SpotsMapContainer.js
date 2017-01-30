@@ -1,4 +1,4 @@
-import {connect} from 'inferno-redux'
+import {connect} from 'react-redux'
 import {mapStateChange, spotSelectedOnMap} from '../actions'
 import SpotsMap from './SpotsMap'
 

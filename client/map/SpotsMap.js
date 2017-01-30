@@ -1,5 +1,4 @@
-import Inferno, {PropTypes as T} from 'inferno';
-import Component from 'inferno-component';
+import React, {Component, PropTypes as T} from 'react';
 import PigeonMap from './PigeonMap'
 
 import css from './spots.scss'

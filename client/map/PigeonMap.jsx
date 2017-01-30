@@ -1,8 +1,7 @@
-import Inferno from 'inferno'
-import Component from 'inferno-component'
-import Map from 'pigeon-maps/inferno'
-import Marker from 'pigeon-marker/inferno'
-import Cluster from 'pigeon-cluster/inferno'
+import React, {Component} from 'react'
+import Map from 'pigeon-maps'
+import Marker from 'pigeon-marker'
+import Cluster from 'pigeon-cluster'
 import {get, partial} from 'lodash'
 
 export default class PigeonMap extends Component {
@@ -32,10 +31,11 @@ export default class PigeonMap extends Component {
            attribution="Data from furgovw.org is under Creative Commons 3">
         <Cluster>
           {
-            this.props.spots.map(spots => (
-              <Marker anchor={[spots.lat, spots.lng]}
+            this.props.spots.map(spot => (
+              <Marker anchor={[spot.lat, spot.lng]}
+                      key={spot.id}
                       payload={1}
-                      onClick={partial(this.handleMarkerClick, spots)}
+                      onClick={partial(this.handleMarkerClick, spot)}
               />))
           }
         </Cluster>

@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import {persistMapState, retrieveMapState} from 'storage/actions'
+import defs from './defs'
 
 const STATIC_DATA = true;
 
@@ -20,19 +21,19 @@ export const mapStateChange = (newMapState) => {
 
 export const requestSpots = () => {
   return {
-    type: 'REQUEST_SPOTS',
+    type: defs.REQUEST_SPOTS,
   }
 }
 
 export const spotSelectedOnMap = id => {
   return {
-    type: 'SPOT_SELECTED_ON_MAP',
+    type: defs.SPOT_SELECTED_ON_MAP,
     spotId: id
   }
 }
 export const receiveSpots = places => {
   return {
-    type: 'RECEIVE_SPOTS',
+    type: defs.RECEIVE_SPOTS,
     spots: places,
     receivedAt: Date.now()
   }

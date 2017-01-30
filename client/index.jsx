@@ -1,8 +1,9 @@
 import 'babel-polyfill'
-import App from './app'
+import AppContainer from './AppContainer'
 import './index.scss';
-import Inferno, {render} from 'inferno';
-import {Provider} from 'inferno-redux'
+import React from 'react';
+import {render} from 'react-dom';
+import {Provider} from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import css from './index.scss'
@@ -27,7 +28,7 @@ store.dispatch(fetchSpots())
 
 render((
     <Provider store={store}>
-      <App />
+      <AppContainer />
     </Provider>
   ),
   document.getElementById('furgi-app'))

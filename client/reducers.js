@@ -1,17 +1,28 @@
 import {combineReducers} from 'redux'
 import storageReducers from 'storage/reducers'
+import defs from './defs'
 
 const spots = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_SPOT':
+    case defs.ADD_SPOT:
       return [
         ...state,
         {
           cTime: action.cTime
         }
       ]
-    case 'RECEIVE_SPOTS':
+    case defs.RECEIVE_SPOTS:
       return action.spots
+    default:
+      return state
+  }
+}
+
+const activeSpot = (state = '', action) => {
+  switch (action.type) {
+    case defs.SPOT_SELECTED_ON_MAP:
+      console.log('active spot', JSON.stringify(action))
+      return action.spotId
     default:
       return state
   }
@@ -19,7 +30,7 @@ const spots = (state = [], action) => {
 
 const mapState = (state = {}, action) => {
   switch (action.type) {
-    case 'MAP_STATE_CHANGE': {
+    case defs.MAP_STATE_CHANGE: {
       return Object.assign({}, state, action.mapState)
     }
     default:
@@ -29,6 +40,7 @@ const mapState = (state = {}, action) => {
 
 const placesApp = combineReducers({
   spots: spots,
+  activeSpot,
   mapState: mapState,
   storage: storageReducers
 })

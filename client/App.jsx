@@ -1,6 +1,6 @@
 import 'styles/main.scss';
 import React, {Component} from 'react';
-// import Drawer from './drawer/Drawer';
+import Drawer from './drawer/Drawer';
 import SpotsMapContainer from 'map/SpotsMapContainer';
 import swURL from 'file?name=/sw.js!babel-loader!./sw';
 import css from './app.scss';
@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className={css.root}>
         <SpotsMapContainer style={{ height: '100%', width: '100%' }}/>
-        {/*<Drawer origin='bottom'/>*/}
+        <Drawer origin='bottom'/>
       </div>);
   }
 }
