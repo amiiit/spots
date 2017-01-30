@@ -10,6 +10,7 @@ const SW_ENABLE = process.env.NODE_ENV !== 'development'
 class App extends Component {
 
   componentDidMount () {
+
     console.log('component did mount', swURL);
     if ("serviceWorker" in navigator) {
       SW_ENABLE && navigator.serviceWorker.register(swURL).then(() => {
