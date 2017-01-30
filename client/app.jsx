@@ -2,7 +2,7 @@ import 'styles/main.scss';
 import React, {Component} from 'react';
 import Drawer from './drawer/Drawer';
 import SpotsMapContainer from 'map/SpotsMapContainer';
-import swURL from '!file?name=/sw.js!babel-loader!./sw';
+import swURL from 'file?name=/sw.js!babel-loader!./sw';
 import css from './app.scss';
 
 const SW_ENABLE = process.env.NODE_ENV !== 'development'
