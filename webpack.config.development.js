@@ -11,6 +11,12 @@ Object.assign(config, {
   ])
 })
 
+config.module.loaders = config.module.loaders.map(loader => {
+  if (loader.test.toString() === '/\\.jsx?$/') {
+    loader.loaders.unshift('react-hot')
+  }
+  return loader
+})
 config.entry.main = [
   'webpack/hot/dev-server',
   'webpack-hot-middleware/client'
